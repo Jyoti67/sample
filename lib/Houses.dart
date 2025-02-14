@@ -226,7 +226,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     );
   }
 
-  /// Builds the header for Web and Mobile
+  // header web or mobile ke liye
   Widget buildHeader() {
     return Padding(
       padding: EdgeInsets.all(16.0),
@@ -244,14 +244,14 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     );
   }
 
-  /// Builds menu buttons with hover dropdown (Web) and tap dropdown (Mobile)
+  /// Builds menu buttons hover ke saath
   Widget buildMenuButtons() {
     return Row(
       children: menuItems.map((item) => buildDropdownButton(item)).toList(),
     );
   }
 
-  /// Builds Dropdown Button (Hover for Web, Tap for Mobile)
+  // upper vala section mobile or web ke liye
   Widget buildDropdownButton(String title) {
     GlobalKey key = GlobalKey();
     return MouseRegion(
@@ -340,7 +340,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     );
   }
 
-  /// Displays Login Dialog Box
+  // login vala dialogbox
   void showLoginDialog() {
     showDialog(
       context: context,
@@ -359,7 +359,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     );
   }
 
-  /// Builds Discover Section with Horizontal Scroll List
+  // Discover section ko dikhane ke liye cards and heading
   Widget buildDiscoverSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -397,13 +397,13 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
   }
 
 
-  /// Jab screen width 600 se choti ho
+  //Jab screen width 600 se choti ho
   bool isMobile(BuildContext context) {
     return MediaQuery.of(context).size.width < 600;
   }
 }
 
-// Dropdown Field Widget
+// Dropdown textfield ke liye
 Widget buildDropdownField(String label, List<String> items, String selectedValue, Function(String) onChanged) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -425,6 +425,7 @@ Widget buildDropdownField(String label, List<String> items, String selectedValue
   );
 }
 
+// drop down list ke liye
 Widget _buildDropdown(String title, String? value, List<String> items, ValueChanged<String?> onChanged) {
   return Expanded(
     child: Column(
